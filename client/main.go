@@ -4,7 +4,7 @@
 package main
 
 import (
-	"client"
+	"client/client"
 	"fmt"
 	"log"
 
@@ -22,11 +22,14 @@ func AddMessageToList(l *widgets.List, ws_client *client.Client) {
 
 func main() {
 
-	var name string
+	var name, url string
 	fmt.Println("Enter your name")
 	fmt.Scan(&name)
 
-	ws_client := client.NewClient("localhost:8008", name)
+	fmt.Println("Enter url")
+	fmt.Scan(&url)
+
+	ws_client := client.NewClient(url, name)
 
 	if err := ui.Init(); err != nil {
 		log.Fatalf("failed to initialize termui: %v", err)

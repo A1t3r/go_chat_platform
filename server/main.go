@@ -6,7 +6,7 @@ package main
 import (
 	"log"
 	"net/http"
-	"server"
+	"server/server"
 )
 
 func main() {
